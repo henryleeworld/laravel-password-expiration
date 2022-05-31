@@ -19,7 +19,7 @@
                     </div>
                     <form class="form-horizontal" method="POST" action="{{ route('password.expired') }}">
                         @csrf
-                        <div class="form-group row">
+                        <div class="mb-3 row">
                             <label for="current_password" class="col-md-4 col-form-label text-md-right">{{ trans('auth.password.expired.content.current_password') }}</label>
 
                             <div class="col-md-6">
@@ -32,7 +32,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="mb-3 row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('auth.password.expired.content.new_password') }}</label>
 
                             <div class="col-md-6">
@@ -45,7 +45,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="mb-3 row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('auth.password.expired.content.confirm_new_password') }}</label>
 
                             <div class="col-md-6">

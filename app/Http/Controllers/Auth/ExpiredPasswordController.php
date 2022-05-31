@@ -23,7 +23,7 @@ class ExpiredPasswordController extends Controller
     public function store(PasswordExpiredPostRequest $request)
     {
         $request->user()->update([
-            'password' => bcrypt($request->password),
+            'password'            => bcrypt($request->password),
             'password_changed_at' => Carbon::now()->toDateTimeString()
         ]);
         return redirect()->back()->with(['status' => trans('auth.password.expired.message.password_changed_successfully')]);

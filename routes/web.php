@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::get('admin/home', 'App\Http\Controllers\Admin\HomeController@index')->name('admin.home')->middleware('password.expired');
