@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -19,7 +18,7 @@
                     </div>
                     <form class="form-horizontal" method="POST" action="{{ route('password.expired') }}">
                         @csrf
-                        <div class="mb-3 row">
+                        <div class="row mb-3">
                             <label for="current_password" class="col-md-4 col-form-label text-md-right">{{ trans('auth.password.expired.content.current_password') }}</label>
 
                             <div class="col-md-6">
@@ -32,7 +31,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="mb-3 row">
+                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ trans('auth.password.expired.content.new_password') }}</label>
 
                             <div class="col-md-6">
@@ -45,14 +44,14 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="mb-3 row">
+                        <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ trans('auth.password.expired.content.confirm_new_password') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="form-group row mb-0">
+                        <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ trans('auth.password.expired.content.reset_password') }}

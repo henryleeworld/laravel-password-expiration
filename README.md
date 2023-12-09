@@ -1,4 +1,4 @@
-# Laravel 9 密碼到期
+# Laravel 10 密碼到期
 
 根據預設，密碼會設定為在 90 天內過期。最新研究強烈指出強制密碼變更的弊大於利，強制密碼變更會讓使用者選擇較弱的密碼、重複使用密碼或以容易被駭客猜測到的方式更新舊密碼。
 
@@ -20,9 +20,13 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
-- 執行安裝 Laravel Mix 引用的依賴項目，並執行所有 Mix 任務。
+- 執行安裝 Vite 和 Laravel 擴充套件引用的依賴項目。
 ```sh
-$ npm install && npm run dev
+$ npm install
+```
+- 執行正式環境版本化資源管道並編譯。
+```sh
+$ npm run build
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/register` 來進行註冊。
@@ -31,5 +35,5 @@ $ npm install && npm run dev
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/yCfGawV.png)
+![](https://i.imgur.com/ya2FFvz.png)
 > 定期更換密碼是過時的安全作法，效益極低
