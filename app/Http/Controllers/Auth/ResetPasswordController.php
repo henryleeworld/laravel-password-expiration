@@ -7,7 +7,6 @@ use App\Providers\RouteServiceProvider;
 use Carbon\Carbon;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
@@ -41,7 +40,7 @@ class ResetPasswordController extends Controller
      */
     protected function resetPassword($user, $password)
     {
-        $user->password = Hash::make($password);
+        $user->password = $password;
         $user->setRememberToken(Str::random(60));
         $user->password_changed_at = Carbon::now();
         $user->save();
