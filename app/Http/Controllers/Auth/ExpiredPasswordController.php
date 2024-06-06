@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PasswordExpiredPostRequest;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Carbon;
 
 class ExpiredPasswordController extends Controller
 {
@@ -26,6 +25,6 @@ class ExpiredPasswordController extends Controller
             'password'            => $request->password,
             'password_changed_at' => Carbon::now()->toDateTimeString()
         ]);
-        return redirect()->back()->with(['status' => trans('auth.password.expired.message.password_changed_successfully')]);
+        return redirect()->back()->with(['status' => __('Password changed successfully')]);
     }
 }

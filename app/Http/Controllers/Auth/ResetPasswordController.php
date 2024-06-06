@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
-use Carbon\Carbon;
-use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
 class ResetPasswordController extends Controller
@@ -29,7 +27,7 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
     /**
      * Reset the given user's password.
@@ -41,8 +39,11 @@ class ResetPasswordController extends Controller
     protected function resetPassword($user, $password)
     {
         $user->password = $password;
+
         $user->setRememberToken(Str::random(60));
+
         $user->password_changed_at = Carbon::now();
+
         $user->save();
 
         event(new PasswordReset($user));

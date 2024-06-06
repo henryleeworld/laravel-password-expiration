@@ -26,6 +26,6 @@ class MatchOldPassword implements Rule
      */
     public function message()
     {
-        return trans('auth.password.expired.message.not_match_with_old_password');
+        return __('The current password is not match with old password.');
     }
 }

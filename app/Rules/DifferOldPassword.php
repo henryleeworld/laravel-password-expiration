@@ -42,6 +42,6 @@ class DifferOldPassword implements Rule
      */
     public function message()
     {
-        return trans('auth.password.expired.message.match_with_old_password');
+        return __('The new password is the same as the old password.');
     }
 }
