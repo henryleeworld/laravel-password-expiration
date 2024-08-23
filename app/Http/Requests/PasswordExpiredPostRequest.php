@@ -26,7 +26,7 @@ class PasswordExpiredPostRequest extends FormRequest
         return [
             'current_password'      => ['required', new MatchOldPassword],
             'password'              => ['required', 'string', 'min:8', 'confirmed', new DifferOldPassword],
-		    'password_confirmation' => ['required', 'string', 'min:8', 'same:password'],
+            'password_confirmation' => ['required', 'string', 'min:8', 'same:password'],
         ];
     }
 }
