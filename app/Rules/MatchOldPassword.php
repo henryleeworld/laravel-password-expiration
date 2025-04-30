@@ -22,7 +22,7 @@ class MatchOldPassword implements Rule
     /**
      * Get the validation error message.
      *
-     * @return string
+     * @return array
      */
     public function message()
     {

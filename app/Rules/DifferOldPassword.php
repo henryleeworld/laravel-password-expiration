@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Hash;
 class DifferOldPassword implements Rule
 {
     /**
-     * Create a new rule instance.
-     *
-     * @return void
+     * Constructor.
      */
     public function __construct()
     {
@@ -25,10 +23,9 @@ class DifferOldPassword implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param mixed $attribute Attribute
-     * @param mixed $value     Value
-     *
-     * @return boolean
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @return bool
      */
     public function passes($attribute, $value)
     {
@@ -38,7 +35,7 @@ class DifferOldPassword implements Rule
     /**
      * Get the validation error message.
      *
-     * @return string
+     * @return array
      */
     public function message()
     {
